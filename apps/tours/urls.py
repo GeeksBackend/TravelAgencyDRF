@@ -1,12 +1,8 @@
-from django.urls import path 
+from rest_framework.routers import DefaultRouter
 
-from apps.tours.views import TourAPI, TourAPICreate, TourAPIRetrieve, TourAPIUpdate, TourAPIDestroy
+from apps.tours.views import TourViewSet 
 
+router = DefaultRouter()
+router.register('tour', TourViewSet, basename="api_tour")
 
-urlpatterns = [
-    path('', TourAPI.as_view(), name="api_tours"),
-    path('create/', TourAPICreate.as_view(), name="api_tours_create"),
-    path('<int:pk>/', TourAPIRetrieve.as_view(), name="api_tours_retrieve"),
-    path('update/<int:pk>/', TourAPIUpdate.as_view(), name="api_tours_update"),
-    path('destroy/<int:pk>/', TourAPIDestroy.as_view(), name="api_tours_destroy")
-]
+urlpatterns = router.urls
