@@ -1,7 +1,9 @@
-from django.urls import path 
+from rest_framework.routers import DefaultRouter
 
 from apps.hotels.views import HotelAPI
 
-urlpatterns = [
-    path('', HotelAPI.as_view(), name='api_hotels')
-]
+
+router = DefaultRouter()
+router.register('hotel', HotelAPI, "api_hotel")
+
+urlpatterns = router.urls
