@@ -41,6 +41,7 @@ urlpatterns = [
     path('api/tours/', include('apps.tours.urls')),
     path('api/users/', include('apps.users.urls')),
     path('api/hotels/', include('apps.hotels.urls')),
+    path('api/news/', include('apps.news.urls')),
     #docs
     path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='api_swagger'),
     path('api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='api_redoc')
