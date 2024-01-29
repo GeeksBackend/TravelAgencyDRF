@@ -6,5 +6,5 @@ from apps.news.models import News
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News 
-        fields = ('id', 'user', 'title',
-                  'description', 'image')
+        fields = ('id', 'title', 'description', 
+                  'image', 'created')
